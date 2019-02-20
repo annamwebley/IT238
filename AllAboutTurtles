@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>All About Turtles</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <style>
+  	h2 {
+  		text-align: center;
+  	}
+  
+  	img {
+  		display: block;
+  		margin: auto;
+
+  	}
+
+  	#btn_section{
+  		text-align: center;
+  	}
+
+</style>
+  <body>
+  	<h2> All about Turtles </h2>
+
+  	<img src="nickel.jpg" id= "thisTurtle" onmouseover="redBorder()" onmouseout="removeBorder()" alt="Nickel the turtle at Shedd Aquarium"> <br>
+
+  <div id="btn_section">
+  	<button type="button" onclick="shrinkImage()">Shrink Image</button>
+
+  	<button type="button" onclick="enlargePic()">Enlarge Pic</button>
+
+  	<button type="button" onclick="restorePic()">Restore Pic</button>
+  </div>
+
+  <select id="changeFont" onclick="changeFont()">
+  		<option value="Select a Font">Select a Font</option>
+  		<option value="Helvetica">Helvetica</option>
+  		<option value="Verdana">Verdana</option>
+  		<option value="Times New Roman">Times New Roman</option>
+	</select>
+	<br>
+
+<div id='nickel_age'>
+
+	Enter a year: <input type="text" id="nickel_age">
+	<button type="button" id="age">Find out Nickel's age</button>
+</div>
+
+  	<div id='about_turtles'>
+  		<p> Turtles are diapsids of the order Testudines (or Chelonii[3]) characterized by a special bony or cartilaginous shell developed from their ribs and acting as a shield.[4] "Turtle" may refer to the order as a whole (American English) or to fresh-water and sea-dwelling testudines (British English).[5] The order Testudines includes both extant (living) and extinct species. The earliest known members of this group date from 220 million years ago,[1][6] making turtles one of the oldest reptile groups and a more ancient group than snakes or crocodilians. Of the 356 known species[2] alive today, some are highly endangered.[2] </p>
+
+  		<p> Turtles are ectotherms—animals commonly called cold-blooded—meaning that their internal temperature varies according to the ambient environment. However, because of their high metabolic rate, leatherback sea turtles have a body temperature that is noticeably higher than that of the surrounding water. Turtles are classified as amniotes, along with other reptiles, birds, and mammals. Like other amniotes, turtles breathe air and do not lay eggs underwater, although many species live in or around water. The study of turtles is called cheloniology, after the Greek word for turtle. It is also sometimes called testudinology, after the Latin name for turtles. </p>
+
+  		<p> In North America, all chelonians are commonly called turtles. Tortoise is used only in reference to fully terrestrial turtles or, more narrowly, only those members of Testudinidae, the family of modern land tortoises.[10][9] Terrapin may refer to small semi-aquatic turtles that live in fresh and brackish water, in particular the diamondback terrapin (Malaclemys terrapin).[11][12][13][14] Although the members of the genus Terrapene dwell mostly on land, they are referred to as box turtles rather than tortoises.[8] The American Society of Ichthyologists and Herpetologists uses "turtle" to describe all species of the order Testudines, regardless of whether they are land-dwelling or sea-dwelling, and uses "tortoise" as a more specific term for slow-moving terrestrial species.[7]
+
+		In the United Kingdom, the word turtle is used for water-dwelling species, including ones known in the US as terrapins, but not for terrestrial species, which are known only as tortoises. </p>
+
+
+	</div>
+	<div id="nickel_result">
+	<p></p>
+	</div>
+
+
+	<script>
+		function shrinkImage() {
+			$('#thisTurtle').height(200);
+			$('#thisTurtle').width(307);
+
+		}
+
+		function enlargePic() {
+			$('#thisTurtle').height(400);
+			$('#thisTurtle').width(580);
+		}
+
+		function restorePic() {
+			$('#thisTurtle').height(300);
+			$('#thisTurtle').width(460);
+		}
+
+		function redBorder() {
+			$('#thisTurtle').css('border','5px dashed red');
+		}
+
+		function removeBorder() {
+			$('#thisTurtle').css('border','0px ');
+		}
+
+		$('#changeFont').change(function(){
+     	$('#about_turtles').css('font-family', $('#changeFont').val());
+   		});
+
+		$("#age").click(function(){
+      var value = $("input#nickel_age").val();
+      console.log(value)
+      var new_value = parseInt(value)-1996;
+    	$("#nickel_result").append("In " + value + " Nickel will be " + new_value + " years old");
+    });
+
+
+
+	</script>
+  
+  </body>
+</html>
