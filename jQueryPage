@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 02</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    function hideParagraph()
+      {
+        $('#drinks_div').fadeOut(1000);
+        $('#desserts_div').fadeOut(1000);
+        $('#drinks_div').fadeIn(1000);
+        $('#desserts_div').fadeIn(1000);
+      }
+
+    function hideAboutAndThings()
+      {
+        $('#about_me').fadeOut(1000);
+        $('#things_I_like').fadeOut(1000);
+        $('#about_me').fadeIn(1000);
+        $('#things_I_like').fadeIn(1000);
+      }
+    
+
+    function hideFirstItemDrinks()
+      {
+        $("li:first").hide();
+      }
+
+    function hideFirstItemDesserts()
+      {
+        $("#listTwo li:first").hide();
+      }
+
+    function hideWordsWithIce()
+      {
+        $("li:contains('Ice')").hide();
+      }
+
+    function showHiddenWords()
+      {
+        $("li").show();
+      }
+
+  </script>
+
+</head>
+
+<body>
+    <h1> My First jQuery Page</h1>
+
+    <div id="about_me">
+    <h2>About Me</h2>
+    Born in the suburbs of Chicago, I've always been here my whole life. I am fascinated by the city during the night, the lights create great photographs. 
+    </div> <!--this is the end of the div for about me -->
+
+    <div id="things_I_like">
+    <h2>Things I like </h2>
+    I am a photographer so I enjoy taking pictures, often times when I am finished with work at my job I will go to the gym to work out and let off some steam. 
+    </div> <!--this is the end of the div for things I like -->
+
+    <div id="drinks_div">
+    <h2> Drinks</h2>
+    <p>
+        <ul style="list-style-type:none" id="listOne">
+          <li>1. Tea</li>
+          <li>2. Water</li>
+          <li>3. Kombucha</li>
+          <li>4. Iced Coffee </li>
+        </ul>
+    <p>
+    </div> <!--this is the end of the div for drinks -->
+
+    <div id="desserts_div">
+    <h2> Desserts</h2>
+      <ul style="list-style-type:none" id="listTwo">
+          <li>1. Portillo's Choclate Cake</li>
+          <li>2. Tiramisu</li>
+          <li>3. Mint Chocolate Chip Ice Cream</li>
+        </ul>
+    </div> <!--this is the end of the div for desserts -->
+    <div id="change_items">
+      <form action="">
+      <p>Fade H2s inside Food<input type="radio" name="option_item" value="Fade H2s inside Food" onclick="hideParagraph()"></p>
+      
+      <p>Fade the 'About Me' H2s<input type="radio" name="option_item"value="Fade the 'About Me' H2s" onclick="hideAboutAndThings()"></p>
+      
+      <p>Hide first item under drinks<input type="radio" name="option_item" value="Hide first item under drinks' H2s" onclick="hideFirstItemDrinks()"></p>
+      
+      <p>Hide first item under desserts<input type="radio" name="option_item" value="Hide first item under desserts' H2s" onclick="hideFirstItemDesserts()"></p>
+       
+      <p>Hide all items with the word 'Ice' in them<input type="radio" name="option_item" value="Hide all items with the word 'Ice' in them " onclick="hideWordsWithIce().hide('Ice')"> </p>
+       
+      <p>Make all list items visible<input type="radio" name="option_item" value="Make all list items visible" onclick="showHiddenWords()"></p>
+     </form>
+    </div> <!--this is the end of the div for change items -->
+</body>
+</html>
