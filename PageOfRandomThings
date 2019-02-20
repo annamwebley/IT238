@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<style>
+    #main_content{
+      background-color: peachpuff;
+      width: 600px;
+      border: 3px solid;
+    }
+
+    #images_balls img {
+      width: 80px;
+      height: 80px;
+    }
+
+
+</style>
+<body>
+
+  <form name="bring_photo" id="bring_photo" action="#">
+  <div id="main_content">
+    <h2> Page of Random Things</h2>
+  <div id="select_photo">
+    There are 6 small images on the page. Which one would you like to see?
+    <input type="text" name="img_num" id="img_num" value="" onkeypress="return isNumber(this.event);">
+    <input type="button" onclick="bringUpPhoto()" value="Go!">
+  </div>
+    <p>Lorem ipsum dolor amet ethical direct trade trust fund adaptogen fanny pack. Master cleanse taxidermy photo booth whatever, truffaut fam brooklyn wayfarers trust fund. Schlitz narwhal kogi edison bulb woke banjo ramps XOXO health goth trust fund flexitarian tousled coloring book intelligentsia. Chartreuse tattooed fam, farm-to-table 8-bit tousled pickled meditation DIY wayfarers.</p>
+
+    <p> Cray listicle celiac try-hard hashtag. Echo park squid keytar knausgaard mustache craft beer. Green juice godard selfies raclette fashion axe direct trade neutra. Mumblecore bicycle rights ugh coloring book direct trade palo santo keffiyeh letterpress ethical disrupt brooklyn intelligentsia four loko microdosing. Tote bag messenger bag listicle, keffiyeh jean shorts mumblecore microdosing tilde godard mixtape wayfarers enamel pin VHS slow-carb. Man bun celiac listicle trust fund, quinoa shabby chic fixie. </p>
+
+  <hr>
+  <br>
+  <div id="images_balls">
+    <p>
+      <img id="firetruck" class="img_count" src="Balls/firetruck.jpg" alt="firetruck">
+      <img id="baseball" class="img_count" src="Balls/baseball.jpg" alt="baseball">
+      <img id="soccer_ball" class="img_count" src="Balls/soccer_ball.jpg" alt="soccer_ball">
+    </p>
+    <p>
+      <img id="hockey_puck" class="img_count" src="Balls/hockey_puck.jpg" alt="hockey_puck">
+      <img id="tennis_ball" class="img_count" src="Balls/tennis_ball.jpg" alt="tennis_ball">
+      <img id="basketball" class="img_count" src="Balls/basketball.jpg" alt="basketball">
+    </p>
+  </div>
+
+  <hr>
+
+  <div id="some_links">
+    <h3>Some Hyperlinks</h3>
+      <a href="http://www.mozart.com">All About Mozart Link</a>
+      <br>
+      <a href="http://en.wikipedia.org/wiki/Queen_(band)">All About Queen Link</a>
+      <br>
+      <a href="http://www.asparagus.org/">All About Asparagus Link</a><br>
+  </div>
+  <hr>
+
+  <div id="some_lists">
+    <h3>Some Lists</h3>
+    <h4> Fabulous Fruit</h4>
+    <ul>
+      <li>Apple</li>
+      <li>Orange</li>
+      <li>Strawberry</li>
+    </ul>
+
+    <h4> Varied Veggies</h4>
+      <ul>
+        <li>Broccoli</li>
+        <li>Asparagus</li>
+        <li>Cauliflower</li>
+      </ul>
+  </div>
+  </div>
+
+  </form>
+<script>
+
+function requestImageNumber(){
+  
+}
+
+function bringUpPhoto() {
+   var image_length = document.images.length;
+   var imgsrc = document.getElementById("img_num").value;
+   if(imgsrc >0 && imgsrc <= image_length){
+       imgsrc = imgsrc-1;
+       var selImgs = document.images[imgsrc].src;
+       viewImg = window.open(selImgs,'viewImg', 'width=500,height=500');
+   }else{
+       alert('Enter valid number');
+   }
+   return false;
+}
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+
+</script>
+
+</body>
+</html>
